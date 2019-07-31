@@ -28,4 +28,4 @@ https://tim1986.github.io/Constructor-Word-Guess/
 
 This app uses the inquirer npm.
 
-I'm a student six weeks into a twelve week coding boot camp at UNC Charlotte. I was given this project as an assignment, and given clear instructions on how to set up the package.json file, and a series of activities to help me learn how to get the files to interact properly. I have also received some direction in my process from my instructor. I wrote this code, with those significant caveats.
+I'm a student six weeks into a twelve week coding boot camp at UNC Charlotte. I was given this project as an assignment, and given clear instructions on how to set up the package.json file, and a series of activities to help me learn how to get the files to interact properly. I have also received some direction in my process from my instructor. I wrote this code, with those caveats.
