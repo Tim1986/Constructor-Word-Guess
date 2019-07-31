@@ -1,4 +1,4 @@
-var Letter = require("./letter.js")
+var Letter = require("./letter2.js")
 
 function Word(str) {
     this.arrayOfLetters = []
@@ -14,20 +14,27 @@ function Word(str) {
         // returnString takes each letter in arrayOfLetters, stringifies them, pushes them into a new array, and joins them with a space
         return result.join(" ")
     }
-    this.guess = function(character) {
+    this.guess = function (character) {
         for (var i = 0; i < this.arrayOfLetters.length; i++) {
             this.arrayOfLetters[i].check(character)
         }
     }
 }
 
-var test = new Word("two words")
+// var test = new Word("t w")
+// spaces("test", "t w")
+// note the index location of the space
+// remove the space from the string
+// add additional spaces at that index
 
-test.guess("t")
-console.log(test.returnString())
-test.guess("q")
-console.log(test.returnString())
-test.guess("r")
-console.log(test.returnString())
+// console.log(test.returnString())
+// console.log(test.returnString())
+
+// test.guess("t")
+// console.log(test.returnString())
+// test.guess("q")
+// console.log(test.returnString())
+// test.guess("r")
+// console.log(test.returnString())
 
 module.exports = Word

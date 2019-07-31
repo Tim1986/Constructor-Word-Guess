@@ -1,9 +1,8 @@
 // var Letter = require("./letter.js")
-var Word = require("./word.js")
+var Word = require("./word2.js")
 var inquirer = require("inquirer")
 
-var possibleWords = ["homer", "thucydides", "sophocles", "aeschylus", "virgil", "euripides", "plato", "aristotle"]
-// var possibleWords = ["lord of the rings", "hobbit"]
+var possibleWords = ["beauty and the beast", "the lion king", "the jungle book", "the little mermaid", "the hunchback of notre dame", "lilo and stitch", "moana", "fellowship of the ring", "the two towers", "return of the king", "the avengers", "star wars", "empire strikes back", "return of the jedi", ""]
 victories = 0
 defeats = 0
 
