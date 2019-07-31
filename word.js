@@ -21,12 +21,12 @@ function Word(str) {
     }
 }
 
-// var test = new Word("trip")
-// test.guess("t")
-// console.log(test.returnString())
-// test.guess("q")
-// console.log(test.returnString())
-// test.guess("r")
-// console.log(test.returnString())
+var test = new Word("two words")
+test.guess("t")
+console.log(test.returnString())
+test.guess("q")
+console.log(test.returnString())
+test.guess("r")
+console.log(test.returnString())
 
 module.exports = Word

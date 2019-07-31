@@ -2,8 +2,8 @@
 var Word = require("./word.js")
 var inquirer = require("inquirer")
 
-// var possibleWords = ["theosis", "filioque", "theotokos", "cassock", "trinity", "liturgy", "hypostatic", "metropolitan", "litany"]
-var possibleWords = ["dog", "cat"]
+var possibleWords = ["homer", "thucydides", "sophocles", "aeschylus", "virgil", "euripides", "plato", "aristotle"]
+// var possibleWords = ["lord of the rings", "hobbit"]
 victories = 0
 defeats = 0
 
@@ -29,24 +29,32 @@ var continueWord = function () {
             message: "guess a letter"
         }
     ]).then(function (response) {
-        readyWord.guess(response.userGuess)
-        if (readyWord.returnString().includes(response.userGuess)) {
-            console.log("NICE ONE!")
+        if (alreadyGuessed.includes(response.userGuess)) {
+            console.log("You already guessed that silly!")
+            console.log("Here are the letters you've already guessed: " + alreadyGuessed)
         } else {
-            console.log("YOU SUCK!")
-            guesses--;
-            console.log(guesses)
+            readyWord.guess(response.userGuess)
+            if (readyWord.returnString().includes(response.userGuess)) {
+                console.log("NICE ONE!")
+                alreadyGuessed.push(response.userGuess)
+            } else {
+                console.log("YOU SUCK!")
+                guesses--;
+                console.log(guesses)
+                alreadyGuessed.push(response.userGuess)
+            }
         }
         continueWord()
     })
 }
 
-var newWord = function() {
+var newWord = function () {
+    alreadyGuessed = []
     guesses = 10
     randomNumber = Math.floor(Math.random() * possibleWords.length)
     randomWord = possibleWords[randomNumber]
     readyWord = new Word(randomWord)
-    continueWord()    
+    continueWord()
 }
 
 newWord()
