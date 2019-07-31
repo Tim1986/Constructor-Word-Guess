@@ -1,7 +1,10 @@
 var Word = require("./word2.js")
 var inquirer = require("inquirer")
 var validLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var possibleWords = ["beauty and the beast", "the lion king", "the jungle book", "the little mermaid", "the hunchback of notre dame", "lilo and stitch", "moana", "fellowship of the ring", "the two towers", "return of the king", "the avengers", "thor", "captain america the first avenger", "captain ameria the winter soldier", "iron man", "star wars", "empire strikes back", "return of the jedi"]
+var movieWords = ["beauty and the beast", "the lion king", "the jungle book", "the little mermaid", "the hunchback of notre dame", "lilo and stitch", "moana", "fellowship of the ring", "the two towers", "return of the king", "the avengers", "thor", "captain america the first avenger", "captain ameria the winter soldier", "iron man", "star wars", "empire strikes back", "return of the jedi"]
+var poemWords = ["the iliad", "the odyssey"]
+var bookWords = ["to kill a mockingbird", "jane eyre"]
+var wordCategories = [movieWords, poemWords, bookWords]
 victories = 0
 defeats = 0
 
@@ -45,7 +48,7 @@ var continueWord = function () {
                 if (guesses > 0) {
                     console.log("YOU SUCK!")
                     console.log("You only have " + guesses + " guesses left")
-                    alreadyGuessed.push(response.userGuess.toLowerCase())    
+                    alreadyGuessed.push(response.userGuess.toLowerCase())
                 }
             }
         }
@@ -56,10 +59,24 @@ var continueWord = function () {
 var newWord = function () {
     alreadyGuessed = []
     guesses = 10
-    randomNumber = Math.floor(Math.random() * possibleWords.length)
-    randomWord = possibleWords[randomNumber]
+    categoryNumber = Math.floor(Math.random() * wordCategories.length)
+    // console.log(categoryNumber)
+    if (categoryNumber === 0) {
+        chosenCategory = movieWords;
+        console.log("The category is movies")
+    } else if (categoryNumber === 1) {
+        chosenCategory = poemWords
+        console.log("The category is poems")
+    } else {
+        chosenCategory = bookWords
+        console.log("The category is books")
+    }
+    // console.log(chosenCategory)
+    randomNumber = Math.floor(Math.random() * chosenCategory.length)
+    // console.log(randomNumber)
+    randomWord = chosenCategory[randomNumber]
+    // console.log(randomWord)
     readyWord = new Word(randomWord)
-    console.log("The category is 'movie'")
     continueWord()
 }
 
