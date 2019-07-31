@@ -10,16 +10,16 @@ defeats = 0
 
 var continueWord = function () {
     if (!readyWord.returnString().includes("_")) {
-        console.log("Well done, you got the whole word! Here's another")
+        console.log("Well done, you got the whole answer! Here's another")
         victories++;
         console.log("You've succeeded " + victories + " times")
         newWord()
         return
     }
     if (guesses === 0) {
-        console.log("You aren't very good at guessing. Try a new word")
+        console.log("You aren't very good at guessing. Try a new one")
         defeats++;
-        console.log("In case you were wondering, the last word was " + randomWord)
+        console.log("In case you were wondering, the last answer was " + randomWord)
         console.log("You've failed " + defeats + " times")
         newWord()
         return
@@ -28,7 +28,7 @@ var continueWord = function () {
     inquirer.prompt([
         {
             name: "userGuess",
-            message: "guess a letter"
+            message: "Guess a letter: "
         }
     ]).then(function (response) {
         if (alreadyGuessed.includes(response.userGuess.toLowerCase())) {
@@ -63,13 +63,13 @@ var newWord = function () {
     // console.log(categoryNumber)
     if (categoryNumber === 0) {
         chosenCategory = movieWords;
-        console.log("The category is movies")
+        console.log("Your random category is 'movies'")
     } else if (categoryNumber === 1) {
         chosenCategory = poemWords
-        console.log("The category is poems")
+        console.log("Your random category is 'poems'")
     } else {
         chosenCategory = bookWords
-        console.log("The category is books")
+        console.log("Your random category is 'books'")
     }
     // console.log(chosenCategory)
     randomNumber = Math.floor(Math.random() * chosenCategory.length)
