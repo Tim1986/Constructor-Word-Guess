@@ -22,8 +22,4 @@ function Letter(str) {
     }
 }
 
-// var test = new Letter("a")
-// console.log(test)
-// console.log(test.toString())
-
 module.exports = Letter

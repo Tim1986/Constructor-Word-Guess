@@ -21,20 +21,4 @@ function Word(str) {
     }
 }
 
-// var test = new Word("t w")
-// spaces("test", "t w")
-// note the index location of the space
-// remove the space from the string
-// add additional spaces at that index
-
-// console.log(test.returnString())
-// console.log(test.returnString())
-
-// test.guess("t")
-// console.log(test.returnString())
-// test.guess("q")
-// console.log(test.returnString())
-// test.guess("r")
-// console.log(test.returnString())
-
 module.exports = Word
